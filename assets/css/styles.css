@@ -150,8 +150,28 @@ section{padding:64px 0}
 .section-head{text-align:center;margin-bottom:30px}
 
 /* Meet the Architect — crisp cards style */
-.arch-grid{display:grid;gap:18px}
-@media(min-width:900px){.arch-grid{grid-template-columns:repeat(3,1fr)}}
+.arch-grid{
+  display:grid;
+  gap:18px;
+  grid-template-columns: 1fr; /* default stack */
+}
+@media(min-width:900px){
+  .arch-grid{ grid-template-columns:repeat(3,1fr) } /* 3-up on desktop */
+}
+/* Ensure cards don't force extra columns */
+.arch-grid .arch-card{
+  min-width: 0;
+}
+
+/* Strong mobile enforcement: always stack in the Experience section below 900px */
+@media (max-width: 899px){
+  #experience .arch-grid{
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Removed hard overrides so desktop can display 3 columns as designed */
 .arch-card{
   border:1px solid rgba(148,163,184,.25);
   border-radius:16px;
@@ -265,28 +285,38 @@ section{padding:64px 0}
   }
 }
 @media(max-width:899px){
-  /* Stack columns on mobile */
+  /* Stack columns on mobile with no gap */
   .architect-two-col{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
   }
 
-  /* Full-width description with 16px side padding */
+  /* Standardize horizontal padding for both halves */
+  .architect-two-col .left,
   .architect-two-col .right{
-    padding: 14px 16px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    border-radius: 16px;
   }
 
-  /* Photo block centered with balanced padding */
+  /* Ensure vertical spacing between stacked blocks */
   .architect-two-col .left{
-    padding: 14px 16px;
+    padding-top: 16px !important;
+    padding-bottom: 8px !important;
     display:flex;
     justify-content:center;
   }
+  .architect-two-col .right{
+    padding-top: 8px !important;
+    padding-bottom: 16px !important;
+  }
+
+  /* Override inline margin on photo frame, ensure it doesn't touch edges */
   .architect-two-col .left > div{
+    margin: 0 !important;         /* kill inline margins from HTML */
     width: 100%;
-    max-width: 360px;        /* keep image from stretching too wide */
-    height: auto;
+    max-width: 360px;
     min-height: 180px;
-    margin: 0 auto;          /* center */
   }
   .architect-two-col .left > div img{
     width:100%;

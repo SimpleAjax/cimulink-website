@@ -1,13 +1,603 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cimulink — Transform MVPs into Scalable, Enterprise‑Ready Platforms</title>
+  <meta name="description" content="For funded B2B SaaS founders, Cimulink transforms fragile MVPs into scalable, enterprise-ready platforms. Work directly with a backend architect with a decade of experience to reduce risk, increase velocity, and enable growth." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="#hero" class="brand" aria-label="Cimulink home">
+        <span class="badge">
+          <img src="assets/logos/cimulink logo.svg" alt="Cimulink logo">
+        </span>
+        <span class="brand-name">Cimulink</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="#hero">Home</a>
+        <a class="nav-link" href="#problems">Problems</a>
+        <a class="nav-link" href="#solutions">Services</a>
+        <a class="nav-link" href="#process">Process</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#faqs">FAQs</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <a href="https://calendly.com/ajay_k_gupta/30min" target="_blank" rel="noopener" class="btn btn-primary">Schedule Call</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <span class="pill" id="hero-pill" aria-live="polite">
+          <img src="data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 20l9-5-9-5-9 5 9 5z'/%3E%3Cpath d='M12 12l9-5-9-5-9 5 9 5z'/%3E%3C/svg%3E" alt="" />
+          <span class="typewriter-target"></span>built for #scale | ready for #growth</span>
+        </span>
+
+        <h1 class="h1">
+          Your Ambition Needs a System That Can <span class="accent-green">Keep Up.</span>
+        </h1>
+        <p class="hero-sub">
+          From transforming fragile MVPs to architecting scalable systems from scratch, we ensure your platform is built for performance, not problems.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Schedule a Discovery Call</a>
+          <a class="btn" href="#experience">See Experience</a>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">🚀 Scale‑ready MVPs</div>
+          <div class="metric">📉 Reduced churn & risk</div>
+          <div class="metric">🔐 Enterprise‑grade</div>
+        </div>
+
+        <!-- Logos -->
+        <div class="logos-wrap">
+          <div class="logos-card">
+            <div class="logos-marquee" role="list" aria-label="Companies we've worked with">
+              <div class="logos-track">
+                <div class="logo-chip" role="listitem"><img src="assets/logos/arcesium logo.svg" alt="Arcesium"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/sap logo.svg" alt="SAP"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/slice logo.png" alt="Slice" style="background:#6C2BD9;border-radius:8px;padding:4px"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/prudential logo.jpg" alt="Prudential" style="background:#fff;border-radius:8px;padding:4px"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/MAQ-Software-Logo.svg" alt="MAQ Software"></div>
+
+                <!-- duplicate for infinite loop -->
+                <div class="logo-chip" role="listitem"><img src="assets/logos/arcesium logo.svg" alt="Arcesium"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/sap logo.svg" alt="SAP"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/slice logo.png" alt="Slice" style="background:#6C2BD9;border-radius:8px;padding:4px"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/prudential logo.jpg" alt="Prudential" style="background:#fff;border-radius:8px;padding:4px"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/MAQ-Software-Logo.svg" alt="MAQ Software"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problems">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Problems We Solve</div>
+          <h2>Stop Building on Shaky Ground.</h2>
+          <p class="sub">Many promising platforms fail not from a lack of vision, but from a weak technical foundation. We prevent the common pitfalls that stifle growth.</p>
+        </div>
+
+        <!-- feature 1 -->
+        <div class="featurette">
+          <div class="side-right" style="position:relative">
+            <h3>⚡ Poor Scalability</h3>
+            <p class="sub">Your MVP got you funded, but now it creaks under pressure. We re‑architect for high‑throughput and low‑latency, ensuring you're ready for primetime.</p>
+          </div>
+          <div class="media side-left">
+            <div class="chips">
+              <span class="chip">Load Spikes</span>
+              <span class="chip">Latency</span>
+              <span class="chip emph">Throughput</span>
+            </div>
+            <div class="flow" aria-hidden="true">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5,70 C25,40 75,60 95,30" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        
+        <!-- feature 2 -->
+        <div class="featurette alt" style="margin-top:18px">
+          <div class="side-left" style="position:relative">
+            <h3>🧱 Crippling Technical Debt</h3>
+            <p class="sub">Rushed features lead to a codebase that's hard to maintain. We establish best practices and refactor for long‑term velocity.</p>
+          </div>
+          <div class="media side-right">
+            <div class="chips">
+              <span class="chip">Refactor</span>
+              <span class="chip">Testing</span>
+              <span class="chip emph">Standards</span>
+            </div>
+            <div class="flow" aria-hidden="true">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5,30 C35,50 65,20 95,40" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- feature 3 -->
+        <div class="featurette" style="margin-top:18px">
+          <div class="side-right" style="position:relative">
+            <h3>🎯 Vague Strategic Guidance</h3>
+            <p class="sub">Your team is executing, but are they building the right thing? We provide T‑shaped expertise, bridging business goals and technical implementation.</p>
+          </div>
+          <div class="media side-left">
+            <div class="chips">
+              <span class="chip">OKRs</span>
+              <span class="chip">Priorities</span>
+              <span class="chip emph">Outcomes</span>
+            </div>
+            <div class="flow" aria-hidden="true">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5,60 C30,30 70,70 95,40" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        
+        <!-- feature 4 -->
+        <div class="featurette alt" style="margin-top:18px">
+          <div class="side-left" style="position:relative">
+            <h3>🔗 Integration Headaches</h3>
+            <p class="sub">Your platform can't talk to other essential tools, creating data silos and blocking valuable partnerships. We build secure, reliable APIs to connect your ecosystem.</p>
+          </div>
+          <div class="media side-right">
+            <div class="chips">
+              <span class="chip">Auth</span>
+              <span class="chip">Webhooks</span>
+              <span class="chip emph">APIs</span>
+            </div>
+            <div class="flow" aria-hidden="true">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5,50 C40,20 60,80 95,50" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- divider -->
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- Solution & Services -->
+    <section id="solutions">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">What We Do</div>
+          <h2>A Partnership, Not a Purchase.</h2>
+          <p class="sub">Our approach is built on a deep, collaborative understanding of your business. We offer focused expertise to deliver tangible results.</p>
+        </div>
+
+        <div class="featurette">
+          <div>
+            <h3>Scalable MVP Development</h3>
+            <p class="sub">We don't just build MVPs; we build "Minimum Scalable Products". Launch with a robust architecture designed for future growth from day one.</p>
+          </div>
+          <div class="media">
+            <div class="chips">
+              <span class="chip">MVP</span>
+              <span class="chip">Foundations</span>
+              <span class="chip emph">Scalable</span>
+            </div>
+            <div class="flow" aria-hidden="true">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5,65 C35,35 65,55 95,25" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="featurette alt" style="margin-top:18px">
+          <div>
+            <h3>Legacy System Modernization</h3>
+            <p class="sub">Unlock new potential from your existing software. We carefully migrate and modernize legacy systems to improve performance, security, and maintainability.</p>
+          </div>
+          <div class="media">
+            <div class="chips">
+              <span class="chip">Migrate</span>
+              <span class="chip">Hardening</span>
+              <span class="chip emph">Modernize</span>
+            </div>
+            <div class="flow" aria-hidden="true">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5,40 C30,60 70,20 95,45" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="featurette" style="margin-top:18px">
+          <div>
+            <h3>Architectural Guidance</h3>
+            <p class="sub">Leverage our expertise as a "Developer‑Educator". We provide strategic consulting, system design reviews, and team upskilling to ensure long‑term success.</p>
+          </div>
+          <div class="media">
+            <div class="chips">
+              <span class="chip">Reviews</span>
+              <span class="chip">Diagrams</span>
+              <span class="chip emph">Decisions</span>
+            </div>
+            <div class="flow" aria-hidden="true">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5,55 C25,25 75,75 95,45" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="featurette alt" style="margin-top:18px">
+          <div>
+            <h3>Custom API & Integration</h3>
+            <p class="sub">When you need to connect disparate systems and unlock new revenue streams, we design secure, reliable APIs to power your ecosystem.</p>
+          </div>
+          <div class="media">
+            <div class="chips">
+              <span class="chip">SDKs</span>
+              <span class="chip">Events</span>
+              <span class="chip emph">Contracts</span>
+            </div>
+            <div class="flow" aria-hidden="true">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5,50 C45,25 55,75 95,50" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- divider -->
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- Process -->
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Our Process</div>
+          <h2>Your Blueprint for a Better Backend.</h2>
+          <p class="sub">We follow a clear, collaborative process to ensure your project is a success from start to finish.</p>
+        </div>
+
+        <div class="process-wrap">
+
+          <div class="process-intro">
+            <div class="sub" style="text-align:left">
+              Our 4‑step process is built for momentum. We keep it lean and validation‑ready so you can launch without delays.
+            </div>
+          </div>
+
+          <!-- Step 1 -->
+          <div class="step">
+            <div class="step-media">
+              <div class="chip-wrap">
+                <span class="chip">Idea</span>
+                <span class="chip">Discovery Call</span>
+                <span class="chip">Planning</span>
+                <span class="chip primary">Roadmap</span>
+              </div>
+              <div class="flow">
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M5,20 C35,10 65,30 95,20 M5,55 C35,45 65,65 95,55 M5,85 C35,75 65,95 95,85" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <div class="step-num">01</div>
+              <h3>Discovery & Alignment</h3>
+              <p>We start with a deep‑dive call to understand your business goals, technical challenges, and vision. This isn't a sales pitch; it's a strategic alignment session.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step alt">
+            <div>
+              <div class="step-num">02</div>
+              <h3>Strategic Roadmapping & Architecture</h3>
+              <p>We design a detailed architectural blueprint and roadmap. You'll receive a plan that connects every technical decision to a business outcome.</p>
+            </div>
+            <div class="step-media">
+              <div class="chip-wrap">
+                <span class="chip">System Design</span>
+                <span class="chip">Data Modeling</span>
+                <span class="chip">Risk Mitigation</span>
+                <span class="chip primary">Milestones</span>
+              </div>
+              <div class="flow">
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M5,30 C40,20 60,40 95,30 M5,60 C40,50 60,70 95,60" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step">
+            <div class="step-media">
+              <div class="chip-wrap">
+                <span class="chip">CI/CD</span>
+                <span class="chip">Quality Gates</span>
+                <span class="chip">Observability</span>
+                <span class="chip primary">Agile Delivery</span>
+              </div>
+              <div class="flow">
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M5,25 C30,15 70,35 95,25 M5,70 C30,60 70,80 95,70" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <div class="step-num">03</div>
+              <h3>Agile Execution & Collaboration</h3>
+              <p>With a plan in place, we begin development with full transparency: regular check‑ins, direct communication, and a collaborative workflow. No black boxes.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step alt">
+            <div>
+              <div class="step-num">04</div>
+              <h3>Delivery & Partnership</h3>
+              <p>We deliver a robust, well‑documented solution and ensure a smooth handover to your team. The goal: a long‑term strategic partnership, not a one‑off engagement.</p>
+            </div>
+            <div class="step-media">
+              <div class="chip-wrap">
+                <span class="chip">Docs & Handoff</span>
+                <span class="chip">Launch Plan</span>
+                <span class="chip">Scaling</span>
+                <span class="chip primary">Support</span>
+              </div>
+              <div class="flow">
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M5,35 C35,25 65,45 95,35 M5,75 C35,65 65,85 95,75" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- divider -->
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Meet the Architect</div>
+          <h2>Experience proven at top‑tier companies</h2>
+          <p class="sub">Your project is led by a top‑tier engineering graduate with a decade of experience architecting and scaling complex systems at leading fintech and enterprise software companies.</p>
+        </div>
+
+        <!-- Architect: Top block (single card with photo + description) -->
+        <div class="arch-card" style="padding:0;overflow:hidden">
+          <div class="architect-two-col" style="align-items:stretch; border:0; background:transparent; box-shadow:none; padding:0">
+            <!-- Left: photo -->
+            <div class="left" style="display:flex; border:0; background:transparent; box-shadow:none">
+              <div style="width:100%;max-width:360px;height:240px;border-radius:14px;overflow:hidden;border:2px solid rgba(148,163,184,.25);box-shadow:0 10px 26px rgba(2,6,23,.35), inset 0 1px 0 rgba(255,255,255,.06); margin:20px 0 20px 20px">
+                <img src="assets/photos/architect.jpeg" alt="Architect photo" style="width:100%;height:100%;object-fit:cover" />
+              </div>
+            </div>
+            <!-- Right: description -->
+            <div class="right" style="display:flex; border:0; background:transparent; box-shadow:none; padding:20px 20px 20px 0">
+              <div style="flex:1;display:flex;flex-direction:column;justify-content:center;min-height:240px">
+                <div class="kicker" style="color:var(--primary);letter-spacing:.18em;font-size:13px">EDUCATION</div>
+                <div class="sub" style="text-align:left;margin:6px 0 16px">Indian Institute of Technology Guwahati (IIT-G)</div>
+
+                <div class="kicker" style="color:var(--primary);letter-spacing:.18em;font-size:13px">INDUSTRY VERTICALS</div>
+                <div class="sub" style="text-align:left;margin:6px 0 16px">Fintech, Insurance, B2B SaaS</div>
+
+                <div class="kicker" style="color:var(--primary);letter-spacing:.18em;font-size:13px">TECHNICAL EXPERTISE</div>
+                <div class="sub" style="text-align:left;margin:6px 0 0">
+                  Building Scalable Systems, Microservices, Event-Driven & Asynchronous Architecture, Cloud-Native Solutions (AWS, Kubernetes), Automated CI/CD (GitHub Actions, Argo), and End-to-End Observability.
+                </div>
+                <!-- LinkedIn inside Architect description -->
+                <div style="margin-top:14px">
+                  <a href="https://www.linkedin.com/in/ajay-kaaran-gupta" target="_blank" rel="noopener" class="btn" aria-label="Connect on LinkedIn" title="Connect on LinkedIn" style="padding:8px 12px;font-weight:700;display:inline-flex;align-items:center;gap:8px;border-radius:10px">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#0a66c2" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.452 20.452h-3.554v-5.568c0-1.329-.026-3.039-1.852-3.039-1.854 0-2.137 1.448-2.137 2.944v5.663H9.354V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.604 0 4.267 2.372 4.267 5.456v6.287zM5.337 7.433c-1.141 0-2.064-.925-2.064-2.065 0-1.14.923-2.064 2.064-2.064 1.14 0 2.064.924 2.064 2.064 0 1.14-.924 2.065-2.064 2.065zM7.114 20.452H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.277V1.723C24 .771 23.2 0 22.225 0z"/>
+                    </svg>
+                    <span>Connect on LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architect: Bottom block (full-width 3 cards) -->
+        <div class="arch-grid" style="grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px">
+          <div class="arch-card reveal">
+            <span class="bubble" style="width:120px;height:120px;left:-30px;top:-20px"></span>
+            <span class="bubble" style="width:70px;height:70px;right:-20px;bottom:-10px"></span>
+            <h3 class="arch-title"><span class="icon">⌁</span> Robust System Design</h3>
+            <ul class="arch-list">
+              <li><span class="tick">✓</span><span>Architected core financial engines for fintech platforms.</span></li>
+              <li><span class="tick">✓</span><span>Built secure systems to manage sensitive data for Fortune 500 companies.</span></li>
+              <li><span class="tick">✓</span><span>Developed automated payment systems to streamline revenue collection.</span></li>
+            </ul>
+          </div>
+
+          <div class="arch-card reveal">
+            <span class="bubble" style="width:100px;height:100px;right:-30px;top:-20px"></span>
+            <span class="bubble" style="width:60px;height:60px;left:-20px;bottom:-20px"></span>
+            <h3 class="arch-title"><span class="icon">⚡</span> Elite Performance & Scale</h3>
+            <ul class="arch-list">
+              <li><span class="tick">✓</span><span>Optimized systems to handle massive user growth while cutting server costs.</span></li>
+              <li><span class="tick">✓</span><span>Engineered intelligent infrastructure that adapts to real‑time demand.</span></li>
+              <li><span class="tick">✓</span><span>Improved responsiveness and reliability for seamless user experience.</span></li>
+            </ul>
+          </div>
+
+          <div class="arch-card reveal">
+            <span class="bubble" style="width:110px;height:110px;left:-35px;bottom:-25px"></span>
+            <span class="bubble" style="width:55px;height:55px;right:-15px;top:-15px"></span>
+            <h3 class="arch-title"><span class="icon">◎</span> Strategic Leadership</h3>
+            <ul class="arch-list">
+              <li><span class="tick">✓</span><span>Led high‑performing teams to deliver complex projects on time and budget.</span></li>
+              <li><span class="tick">✓</span><span>Managed projects from concept to launch with strong quality gates.</span></li>
+              <li><span class="tick">✓</span><span>Raised platform stability with rigorous engineering and observability.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Reuse the logo marquee -->
+        <div class="logos-wrap">
+          <div class="logos-card">
+            <div class="logos-marquee" role="list" aria-label="Experience proven at top-tier companies">
+              <div class="logos-track">
+                <div class="logo-chip" role="listitem"><img src="assets/logos/arcesium logo.svg" alt="Arcesium"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/sap logo.svg" alt="SAP"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/slice logo.png" alt="Slice" style="background:#6C2BD9;border-radius:8px;padding:4px"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/prudential logo.jpg" alt="Prudential" style="background:#fff;border-radius:8px;padding:4px"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/MAQ-Software-Logo.svg" alt="MAQ Software"></div>
+
+                <div class="logo-chip" role="listitem"><img src="assets/logos/arcesium logo.svg" alt="Arcesium"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/sap logo.svg" alt="SAP"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/slice logo.png" alt="Slice" style="background:#6C2BD9;border-radius:8px;padding:4px"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/prudential logo.jpg" alt="Prudential" style="background:#fff;border-radius:8px;padding:4px"></div>
+                <div class="logo-chip" role="listitem"><img src="assets/logos/MAQ-Software-Logo.svg" alt="MAQ Software"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faqs">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">FAQs</div>
+          <h2>Have Questions? We Have Answers.</h2>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Why work with us instead of a larger development agency?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              <p class="sub">With a large agency, your project is often delegated to junior developers. With cimulink, you get direct, dedicated access to an architect with a decade of experience from start to finish. This means deeper expertise, clearer communication, and a strategic partner who understands the business context, not just the code. You're investing in experience, not overhead.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" style="margin-top:12px">
+            <button class="faq-q" aria-expanded="false">
+              What if we just need strategic advice and not a full project?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              <p class="sub">Absolutely. We offer "Architectural Guidance" and advisory retainers — perfect for teams needing senior‑level oversight, code reviews, or roadmap help without a full‑time hire or large‑scale engagement.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" style="margin-top:12px">
+            <button class="faq-q" aria-expanded="false">
+              Our technical debt is slowing us down, but we can't stop building new features. How do you handle this?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              <p class="sub">We don't believe in "all or nothing" rewrites. We use a strategic, phased refactoring process that runs in parallel with feature development — improving stability and velocity without halting your roadmap.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" style="margin-top:12px">
+            <button class="faq-q" aria-expanded="false">
+              How do you price your services?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              <p class="sub">We focus on value, not just hours. We primarily work on a fixed‑project or monthly retainer basis for budget predictability and alignment on business outcomes like reduced churn and mitigated risk.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" style="margin-top:12px">
+            <button class="faq-q" aria-expanded="false">
+              What technologies do you specialize in?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              <p class="sub">Experts in Node.js, Go, Java, and Kotlin; cloud on AWS and Google Cloud. We're technology‑agnostic — we choose tools to solve your specific scalability and performance challenges.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" style="margin-top:12px">
+            <button class="faq-q" aria-expanded="false">
+              What can we expect at the end of a project? What does the handoff look like?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              <p class="sub">You receive clean, documented, and tested software. We conclude with a detailed handoff session and architectural diagrams so your team can confidently own and extend the foundation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <div class="eyebrow">Ready?</div>
+          <h2 class="h2">Ready to Build Your Future‑Proof Platform?</h2>
+          <p class="sub" style="margin:8px auto 16px">Let's start a conversation. We offer a no‑obligation discovery call to understand your challenges and explore how we can help you achieve your goals.</p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px">
+            <a class="btn btn-primary" href="https://calendly.com/ajay_k_gupta/30min" target="_blank" rel="noopener">Schedule Your Call</a>
+            <a class="btn" href="mailto:build@cimulink.com">build@cimulink.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© 2025 Cimulink. All rights reserved.</div>
+      <div style="display:flex;gap:12px">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating LinkedIn Button -->
+  <a href="https://www.linkedin.com/in/ajay-kaaran-gupta" target="_blank" rel="noopener" class="fab-linkedin" aria-label="Visit LinkedIn profile" title="LinkedIn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.452 20.452h-3.554v-5.568c0-1.329-.026-3.039-1.852-3.039-1.854 0-2.137 1.448-2.137 2.944v5.663H9.354V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.604 0 4.267 2.372 4.267 5.456v6.287zM5.337 7.433c-1.141 0-2.064-.925-2.064-2.065 0-1.14.923-2.064 2.064-2.064 1.14 0 2.064.924 2.064 2.064 0 1.14-.924 2.065-2.064 2.065zM7.114 20.452H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.277V1.723C24 .771 23.2 0 22.225 0z"/>
+    </svg>
+  </a>
+
+  <script src="assets/js/main.js"></script>
+</body>
 </html>

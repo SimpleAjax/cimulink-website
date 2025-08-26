@@ -371,6 +371,175 @@
     setTimeout(tick, startDelay);
   }
 
+  // Architecture Diagram Toggle
+  const initArchitectureToggle = () => {
+    const toggleBtn = document.getElementById('architecture-toggle');
+    const beforeDiagram = document.getElementById('before-diagram');
+    const afterDiagram = document.getElementById('after-diagram');
+    
+    if (!toggleBtn || !beforeDiagram || !afterDiagram) return;
+    
+    toggleBtn.addEventListener('click', () => {
+      const isShowingSolution = toggleBtn.classList.contains('solution');
+      
+      if (isShowingSolution) {
+        // Switch to "before" diagram
+        beforeDiagram.classList.add('active');
+        afterDiagram.classList.remove('active');
+        toggleBtn.classList.remove('solution');
+        toggleBtn.querySelector('.toggle-text').textContent = 'Show Our Solution';
+      } else {
+        // Switch to "after" diagram
+        afterDiagram.classList.add('active');
+        beforeDiagram.classList.remove('active');
+        toggleBtn.classList.add('solution');
+        toggleBtn.querySelector('.toggle-text').textContent = 'Show Original';
+      }
+    });
+  };
+
+  // Cache Architecture Scenario Navigation
+  const initCacheScenarioNavigation = () => {
+    const scenarioButtons = document.querySelectorAll('.scenario-btn');
+    const flowArrows = document.querySelectorAll('.flow-arrow');
+    
+    if (!scenarioButtons.length) return;
+    
+    scenarioButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const scenario = button.dataset.scenario;
+        
+        // Update active button
+        scenarioButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        // Hide all flow arrows
+        flowArrows.forEach(arrow => {
+          arrow.style.opacity = '0';
+          arrow.style.animation = 'none';
+        });
+        
+        // Show flow arrows for selected scenario with animation
+        setTimeout(() => {
+          const scenarioArrows = document.querySelectorAll(`.${scenario}-flow`);
+          scenarioArrows.forEach((arrow, index) => {
+            setTimeout(() => {
+              arrow.style.opacity = '1';
+              arrow.style.animation = 'flowAnimation 1.5s ease-in-out';
+            }, index * 300);
+          });
+        }, 100);
+      });
+    });
+    
+    // Add CSS for flow animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes flowAnimation {
+        0% { opacity: 0; transform: scaleX(0); }
+        50% { opacity: 1; transform: scaleX(1); }
+        100% { opacity: 0.8; transform: scaleX(1); }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // Trigger initial animation for cache hit scenario
+    setTimeout(() => {
+      const initialArrows = document.querySelectorAll('.hit-flow');
+      initialArrows.forEach((arrow, index) => {
+        setTimeout(() => {
+          arrow.style.opacity = '1';
+          arrow.style.animation = 'flowAnimation 1.5s ease-in-out';
+        }, index * 300);
+      });
+    }, 500);
+  };
+
+  // Educational Popups for Architecture Components
+  const initArchitecturePopups = () => {
+    const components = document.querySelectorAll('[data-tooltip]');
+    
+    components.forEach(component => {
+      component.addEventListener('click', (e) => {
+        // Prevent default to stop any other actions
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Remove any existing tooltips
+        const existingTooltip = document.querySelector('.architecture-tooltip');
+        if (existingTooltip) {
+          existingTooltip.remove();
+        }
+        
+        // Create tooltip element
+        const tooltip = document.createElement('div');
+        tooltip.className = 'architecture-tooltip';
+        tooltip.innerHTML = `
+          <div class="tooltip-content">
+            <h4>${component.querySelector('.component-label').textContent}</h4>
+            <p>${component.getAttribute('data-tooltip')}</p>
+            <button class="tooltip-close">×</button>
+          </div>
+        `;
+        
+        // Position tooltip near the component
+        const rect = component.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        
+        tooltip.style.position = 'absolute';
+        tooltip.style.left = (rect.left + scrollLeft + rect.width / 2) + 'px';
+        tooltip.style.top = (rect.top + scrollTop - 10) + 'px';
+        tooltip.style.transform = 'translate(-50%, -100%)';
+        tooltip.style.zIndex = '1000';
+        
+        // Add to document
+        document.body.appendChild(tooltip);
+        
+        // Add close functionality
+        const closeBtn = tooltip.querySelector('.tooltip-close');
+        closeBtn.addEventListener('click', () => {
+          tooltip.remove();
+        });
+        
+        // Close tooltip when clicking anywhere else
+        const closeTooltip = (e) => {
+          if (!tooltip.contains(e.target) && e.target !== component) {
+            tooltip.remove();
+            document.removeEventListener('click', closeTooltip);
+          }
+        };
+        
+        // Delay adding the event listener to prevent immediate closing
+        setTimeout(() => {
+          document.addEventListener('click', closeTooltip);
+        }, 100);
+      });
+    });
+  };
+
+  // Mobile Navigation Toggle
+  function initMobileNav() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    
+    if (!mobileMenuToggle || !mobileNav) return;
+    
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenuToggle.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    });
+    
+    // Close mobile menu when clicking on a link
+    const mobileLinks = mobileNav.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+  }
+
   // Boot
   document.addEventListener('DOMContentLoaded', () => {
     initMarquee();
@@ -379,5 +548,9 @@
     initBouncyChips();
     initFaq();
     initHeroPillTypewriter();
+    initArchitectureToggle();
+    initArchitecturePopups();
+    initCacheScenarioNavigation();
+    initMobileNav();
   });
 })();

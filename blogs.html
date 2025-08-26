@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Technical Blogs - Cimulink</title>
+  <meta name="description" content="Explore our technical blogs on scalable system design, backend architecture, and enterprise software development." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/logos/cimulink logo.svg" type="image/svg+xml">
+  
+  <!-- Showdown.js for Markdown to HTML conversion -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Cimulink home">
+        <span class="badge">
+          <img src="assets/logos/cimulink logo.svg" alt="Cimulink logo">
+        </span>
+        <span class="brand-name">Cimulink</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="index.html#hero">Home</a>
+        <a class="nav-link" href="index.html#problems">Problems</a>
+        <a class="nav-link" href="index.html#solutions">Services</a>
+        <a class="nav-link" href="index.html#process">Process</a>
+        
+        <!-- Dropdown for additional items -->
+        <div class="dropdown">
+          <a class="nav-link dropbtn" href="#">More <span style="font-size: 0.8em;">▼</span></a>
+          <div class="dropdown-content">
+            <a class="nav-link" href="index.html#experience">Experience</a>
+            <a class="nav-link" href="index.html#faqs">FAQs</a>
+            <a class="nav-link" href="index.html#contact">Contact</a>
+            <a class="nav-link" href="blogs.html">Blogs</a>
+          </div>
+        </div>
+      </nav>
+
+      <a href="https://calendly.com/ajay_k_gupta/30min" target="_blank" rel="noopener" class="btn btn-primary">Schedule Call</a>
+      
+      <!-- Mobile menu toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+  
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html" class="brand" aria-label="Cimulink home">
+      <span class="badge">
+        <img src="assets/logos/cimulink logo.svg" alt="Cimulink logo">
+      </span>
+      <span class="brand-name">Cimulink</span>
+    </a>
+    
+    <div class="nav-links">
+      <a class="nav-link" href="index.html#hero">Home</a>
+      <a class="nav-link" href="index.html#problems">Problems</a>
+      <a class="nav-link" href="index.html#solutions">Services</a>
+      <a class="nav-link" href="index.html#process">Process</a>
+      <a class="nav-link" href="index.html#experience">Experience</a>
+      <a class="nav-link" href="index.html#faqs">FAQs</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
+      <a class="nav-link" href="blogs.html">Blogs</a>
+    </div>
+    
+    <a href="https://calendly.com/ajay_k_gupta/30min" target="_blank" rel="noopener" class="btn btn-primary">Schedule Call</a>
+  </nav>
+
+  <main>
+    <!-- Blog Header -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="h1">
+          Technical <span class="accent-green">Blogs</span>
+        </h1>
+        <p class="hero-sub">
+          Explore our insights on scalable system design, backend architecture, and enterprise software development.
+        </p>
+      </div>
+    </section>
+
+    <!-- Blog Listing -->
+    <section id="blogs">
+      <div class="container">
+        <div class="section-head">
+          <h2>Latest Articles</h2>
+          <p class="sub">Discover our latest technical insights and best practices</p>
+        </div>
+
+        <div class="blog-grid">
+          <!-- Blog cards will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© 2025 Cimulink. All rights reserved.</div>
+      <div style="display:flex;gap:12px">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#process">Process</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="blogs.html">Blogs</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating LinkedIn Button -->
+  <a href="https://www.linkedin.com/in/ajay-kaaran-gupta" target="_blank" rel="noopener" class="fab-linkedin" aria-label="Visit LinkedIn profile" title="LinkedIn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.452 20.452h-3.554v-5.568c0-1.329-.026-3.039-1.852-3.039-1.854 0-2.137 1.448-2.137 2.944v5.663H9.354V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.604 0 4.267 2.372 4.267 5.456v6.287zM5.337 7.433c-1.141 0-2.064-.925-2.064-2.065 0-1.14.923-2.064 2.064-2.064 1.14 0 2.064.924 2.064 2.064 0 1.14-.924 2.065-2.064 2.065zM7.114 20.452H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.277V1.723C24 .771 23.2 0 22.225 0z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Initialize Showdown converter
+    const converter = new showdown.Converter();
+    converter.setOption('ghCompatibleHeaderId', true);
+    converter.setOption('simpleLineBreaks', true);
+    converter.setOption('openLinksInNewWindow', true);
+
+    // Function to generate blog card HTML
+    function createBlogCard(title, description, image, folderName) {
+      // Prepend 'blogs/folderName/' to the image path if it exists
+      const imagePath = image ? `blogs/${folderName}/${image}` : null;
+      return `
+        <div class="card blog-card">
+          <div class="blog-image">
+            ${imagePath ? `<img src="${imagePath}" alt="${title}" />` : '<div class="placeholder-image">Blog Image</div>'}
+          </div>
+          <div class="blog-content">
+            <h3>${title}</h3>
+            <p class="sub">${description}</p>
+            <a href="blog.html?file=${folderName}" class="btn">Read More</a>
+          </div>
+        </div>
+      `;
+    }
+
+    // Function to parse frontmatter from markdown content
+    function parseFrontmatter(content) {
+      const frontmatter = {};
+      if (content.startsWith('---')) {
+        const end = content.indexOf('---', 3);
+        if (end !== -1) {
+          const frontmatterContent = content.substring(3, end);
+          const lines = frontmatterContent.split('\n');
+          lines.forEach(line => {
+            const colonIndex = line.indexOf(':');
+            if (colonIndex !== -1) {
+              const key = line.substring(0, colonIndex).trim();
+              let value = line.substring(colonIndex + 1).trim();
+              // Remove quotes if present
+              if (value.startsWith('"') && value.endsWith('"')) {
+                value = value.substring(1, value.length - 1);
+              }
+              frontmatter[key] = value;
+            }
+          });
+          // Return content without frontmatter
+          return { frontmatter, content: content.substring(end + 3).trim() };
+        }
+      }
+      // No frontmatter found, return original content
+      return { frontmatter, content };
+    }
+
+    // Function to extract title and first paragraph from markdown
+    function extractBlogInfo(content, fileName) {
+      // Parse frontmatter if present
+      const { frontmatter, content: markdownContent } = parseFrontmatter(content);
+      
+      // Convert markdown to HTML using Showdown
+      const html = converter.makeHtml(markdownContent);
+      
+      // Create a temporary element to parse the HTML
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = html;
+      
+      // Extract title from frontmatter or first H1
+      let title = fileName.replace('.md', '').replace(/-/g, ' ');
+      if (frontmatter.title) {
+        title = frontmatter.title;
+      } else {
+        const h1 = tempDiv.querySelector('h1');
+        if (h1) {
+          title = h1.textContent;
+        }
+      }
+      
+      // Extract description from frontmatter or first paragraph
+      let description = '';
+      if (frontmatter.description) {
+        description = frontmatter.description;
+      } else {
+        const p = tempDiv.querySelector('p');
+        if (p) {
+          description = p.textContent;
+        }
+      }
+      
+      // Extract image from frontmatter
+      let image = frontmatter.image || null;
+      
+      // Extract date from frontmatter or use default
+      let date = frontmatter.date || 'August 18, 2025';
+      
+      // Extract author from frontmatter or use default
+      let author = frontmatter.author || 'Cimulink Team';
+      
+      // Limit description length
+      if (description.length > 150) {
+        description = description.substring(0, 150) + '...';
+      }
+      
+      return { title, description, image, date, author };
+    }
+
+    // Function to list all blog files
+    function listBlogFiles() {
+      // In a real implementation, this would fetch from the server
+      // For now, we'll hardcode the sample folders
+      return [
+        'sample-blog-post',
+        'another-technical-post'
+      ];
+    }
+
+    // Function to load a file
+    function loadFile(url, callback) {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            callback(null, xhr.responseText);
+          } else {
+            callback(new Error('Failed to load file: ' + url), null);
+          }
+        }
+      };
+      xhr.send();
+    }
+
+    // Initialize the blog listing
+    document.addEventListener('DOMContentLoaded', function() {
+      const blogGrid = document.querySelector('.blog-grid');
+      const blogFiles = listBlogFiles();
+      
+      if (blogGrid) {
+        let loadedCount = 0;
+        const blogData = [];
+        
+        // Load each blog file
+        blogFiles.forEach(folderName => {
+          loadFile('blogs/' + folderName + '/index.md', function(error, content) {
+            loadedCount++;
+            
+            if (error) {
+              console.error(error);
+              // Still create a card with placeholder content
+              const { title, description, image } = extractBlogInfo('', folderName);
+              blogData.push({
+                title,
+                description,
+                image,
+                folderName
+              });
+            } else {
+              const { title, description, image } = extractBlogInfo(content, folderName);
+              blogData.push({
+                title,
+                description,
+                image,
+                folderName
+              });
+            }
+            
+            // When all files are loaded, render the blog cards
+            if (loadedCount === blogFiles.length) {
+              blogData.forEach(data => {
+                const blogCard = createBlogCard(
+                  data.title,
+                  data.description,
+                  data.image, // Pass image data
+                  data.folderName
+                );
+                blogGrid.innerHTML += blogCard;
+              });
+            }
+          });
+        });
+      }
+    });
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

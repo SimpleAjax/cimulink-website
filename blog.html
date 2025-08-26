@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog Post - Cimulink</title>
+  <meta name="description" content="Read our latest technical blog post on scalable system design and backend architecture." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/logos/cimulink logo.svg" type="image/svg+xml">
+  
+  <!-- Showdown.js for Markdown to HTML conversion -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+
+  <style>
+    /* Blog-specific styles */
+    .blog-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .blog-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--headline);
+    }
+    
+    .blog-content h2 {
+      font-size: 1.8rem;
+      margin: 30px 0 15px 0;
+      color: var(--headline);
+    }
+    
+    .blog-content h3 {
+      font-size: 1.4rem;
+      margin: 25px 0 10px 0;
+      color: var(--headline);
+    }
+    
+    .blog-content p {
+      margin: 15px 0;
+      line-height: 1.7;
+    }
+    
+    .blog-content ul, .blog-content ol {
+      margin: 15px 0;
+      padding-left: 30px;
+    }
+    
+    .blog-content li {
+      margin: 8px 0;
+    }
+    
+    .blog-content strong {
+      font-weight: 700;
+    }
+    
+    .blog-content em {
+      font-style: italic;
+    }
+    
+    .back-to-blogs {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    
+    .back-to-blogs:hover {
+      text-decoration: underline;
+    }
+    
+    .blog-meta {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .blog-date, .blog-author {
+      margin: 5px 0;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Cimulink home">
+        <span class="badge">
+          <img src="assets/logos/cimulink logo.svg" alt="Cimulink logo">
+        </span>
+        <span class="brand-name">Cimulink</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="index.html#hero">Home</a>
+        <a class="nav-link" href="index.html#problems">Problems</a>
+        <a class="nav-link" href="index.html#solutions">Services</a>
+        <a class="nav-link" href="index.html#process">Process</a>
+        
+        <!-- Dropdown for additional items -->
+        <div class="dropdown">
+          <a class="nav-link dropbtn" href="#">More <span style="font-size: 0.8em;">▼</span></a>
+          <div class="dropdown-content">
+            <a class="nav-link" href="index.html#experience">Experience</a>
+            <a class="nav-link" href="index.html#faqs">FAQs</a>
+            <a class="nav-link" href="index.html#contact">Contact</a>
+            <a class="nav-link" href="blogs.html">Blogs</a>
+          </div>
+        </div>
+      </nav>
+
+      <a href="https://calendly.com/ajay_k_gupta/30min" target="_blank" rel="noopener" class="btn btn-primary">Schedule Call</a>
+      
+      <!-- Mobile menu toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+  
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html" class="brand" aria-label="Cimulink home">
+      <span class="badge">
+        <img src="assets/logos/cimulink logo.svg" alt="Cimulink logo">
+      </span>
+      <span class="brand-name">Cimulink</span>
+    </a>
+    
+    <div class="nav-links">
+      <a class="nav-link" href="index.html#hero">Home</a>
+      <a class="nav-link" href="index.html#problems">Problems</a>
+      <a class="nav-link" href="index.html#solutions">Services</a>
+      <a class="nav-link" href="index.html#process">Process</a>
+      <a class="nav-link" href="index.html#experience">Experience</a>
+      <a class="nav-link" href="index.html#faqs">FAQs</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
+      <a class="nav-link" href="blogs.html">Blogs</a>
+    </div>
+    
+    <a href="https://calendly.com/ajay_k_gupta/30min" target="_blank" rel="noopener" class="btn btn-primary">Schedule Call</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <a href="blogs.html" class="back-to-blogs">← Back to all blogs</a>
+        <div class="blog-content" id="blog-content">
+          <!-- Blog content will be loaded here -->
+          <div style="text-align: center; padding: 50px 0;">
+            <p>Loading blog content...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© 2025 Cimulink. All rights reserved.</div>
+      <div style="display:flex;gap:12px">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#process">Process</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="blogs.html">Blogs</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating LinkedIn Button -->
+  <a href="https://www.linkedin.com/in/ajay-kaaran-gupta" target="_blank" rel="noopener" class="fab-linkedin" aria-label="Visit LinkedIn profile" title="LinkedIn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.452 20.452h-3.554v-5.568c0-1.329-.026-3.039-1.852-3.039-1.854 0-2.137 1.448-2.137 2.944v5.663H9.354V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.604 0 4.267 2.372 4.267 5.456v6.287zM5.337 7.433c-1.141 0-2.064-.925-2.064-2.065 0-1.14.923-2.064 2.064-2.064 1.14 0 2.064.924 2.064 2.064 0 1.14-.924 2.065-2.064 2.065zM7.114 20.452H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.277V1.723C24 .771 23.2 0 22.225 0z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Initialize Showdown converter
+    const converter = new showdown.Converter();
+    converter.setOption('ghCompatibleHeaderId', true);
+    converter.setOption('simpleLineBreaks', true);
+    converter.setOption('openLinksInNewWindow', true);
+
+    // Function to parse frontmatter from markdown content
+    function parseFrontmatter(content) {
+      const frontmatter = {};
+      if (content.startsWith('---')) {
+        const end = content.indexOf('---', 3);
+        if (end !== -1) {
+          const frontmatterContent = content.substring(3, end);
+          const lines = frontmatterContent.split('\n');
+          lines.forEach(line => {
+            const colonIndex = line.indexOf(':');
+            if (colonIndex !== -1) {
+              const key = line.substring(0, colonIndex).trim();
+              let value = line.substring(colonIndex + 1).trim();
+              // Remove quotes if present
+              if (value.startsWith('"') && value.endsWith('"')) {
+                value = value.substring(1, value.length - 1);
+              }
+              frontmatter[key] = value;
+            }
+          });
+          // Return content without frontmatter
+          return { frontmatter, content: content.substring(end + 3).trim() };
+        }
+      }
+      // No frontmatter found, return original content
+      return { frontmatter, content };
+    }
+
+    // Function to get URL parameter
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(window.location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    // Function to load a file
+    function loadFile(url, callback) {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            callback(null, xhr.responseText);
+          } else {
+            callback(new Error('Failed to load file: ' + url), null);
+          }
+        }
+      };
+      xhr.send();
+    }
+
+    // Function to load blog content
+    function loadBlogContent(fileName) {
+      const blogContentDiv = document.getElementById('blog-content');
+      
+      if (!fileName) {
+        blogContentDiv.innerHTML = '<h1>Blog Not Found</h1><p>Sorry, the requested blog post could not be found.</p>';
+        return;
+      }
+      
+      // Load the actual markdown file
+      loadFile('blogs/' + fileName + '/index.md', function(error, content) {
+        if (error) {
+          console.error(error);
+          blogContentDiv.innerHTML = '<h1>Error Loading Blog</h1><p>Sorry, there was an error loading the blog post content.</p>';
+          return;
+        }
+        
+        // Parse frontmatter if present
+        const { frontmatter, content: markdownContent } = parseFrontmatter(content);
+        
+        // Parse the markdown content using Showdown
+        const htmlContent = converter.makeHtml(markdownContent);
+        
+        // Extract metadata
+        const title = frontmatter.title || fileName.replace('.md', '').replace(/-/g, ' ');
+        const date = frontmatter.date || 'August 18, 2025';
+        const author = frontmatter.author || 'Cimulink Team';
+        
+        // Create metadata header
+        const metadataHeader = `
+          <div class="blog-meta">
+            <p class="blog-date"><em>Published on ${date}</em></p>
+            <p class="blog-author"><em>By ${author}</em></p>
+          </div>
+        `;
+        
+        // Insert the content with metadata
+        blogContentDiv.innerHTML = metadataHeader + htmlContent;
+      });
+    }
+
+    // Initialize the blog post page
+    document.addEventListener('DOMContentLoaded', function() {
+      const fileName = getUrlParameter('file');
+      loadBlogContent(fileName);
+    });
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

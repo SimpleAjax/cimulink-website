@@ -1,608 +1,1153 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cimulink — Architecting Scalable, Enterprise-Ready Platforms.</title>
-  <meta name="description" content="For funded B2B SaaS founders, Cimulink transforms fragile systems into scalable, enterprise-ready platforms. Work directly with a backend architect with a decade of experience to reduce risk, increase velocity, and enable growth." />
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cimulink - Connected Business Systems</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="cimulink clean only logo - without background.svg"
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              surface: "#f7f5ef",
+              "surface-dim": "#ece7dc",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1f2937",
+              "on-surface-variant": "#5f6b7a",
+              primary: "#214a8a",
+              "on-primary": "#f8fafc",
+              tertiary: "#12786c",
+              "card-bg": "#ffffff",
+              "card-border": "#d9e1ea",
+              "outline-variant": "#b8c4d3",
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
+              mono: ['"JetBrains Mono"', "monospace"],
+            },
+            borderRadius: {
+              soft: "0.25rem",
+              card: "0.5rem",
+              badge: "2px",
+            },
+            spacing: {
+              gutter: "24px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Subtle dot grid for the hero background as seen in the design */
+      .bg-grid-pattern {
+        background-image: radial-gradient(
+          rgba(33, 74, 138, 0.12) 1px,
+          transparent 1px
+        );
+        background-size: 32px 32px;
+      }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+      /* Smooth fade in animation for elements */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-sans antialiased selection:bg-primary selection:text-on-primary"
+  >
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-card-border/70"
+    >
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="#home" class="flex-shrink-0 flex items-center gap-2">
+            <img
+              src="cimulink clean only logo - without background.svg"
+              alt="Cimulink logo"
+              class="h-8 w-auto"
+            >
+            <span class="font-bold text-xl text-on-surface tracking-tight"
+              >Cimulink</span
+            >
+          </a>
 
-  <link rel="stylesheet" href="assets/css/styles.css" />
+          <!-- Center Links (Desktop) -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="text-on-surface-variant hover:text-on-surface transition-colors text-sm font-medium"
+              >Home</a
+            >
+            <a
+              href="#solutions"
+              class="text-on-surface-variant hover:text-on-surface transition-colors text-sm font-medium"
+              >Solutions</a
+            >
+            <a
+              href="#how-it-works"
+              class="text-on-surface-variant hover:text-on-surface transition-colors text-sm font-medium"
+              >How it Works</a
+            >
+            <a
+              href="#manufacturing"
+              class="text-on-surface-variant hover:text-on-surface transition-colors text-sm font-medium"
+              >Manufacturing</a
+            >
+            <a
+              href="#faq"
+              class="text-on-surface-variant hover:text-on-surface transition-colors text-sm font-medium"
+              >FAQ</a
+            >
+          </div>
 
-  <!-- Favicon -->
-  <link rel="icon" href="assets/logos/cimulink logo.svg" type="image/svg+xml">
-  <!-- Fallback PNG (optional, if you add one later) -->
-  <!-- <link rel="icon" href="assets/logos/cimulink-logo-32.png" sizes="32x32" type="image/png"> -->
-</head>
-<body>
+          <!-- Right CTA -->
+          <div class="hidden md:flex">
+            <a
+              href="https://calendly.com/ajay_k_gupta/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-primary text-on-primary border border-primary hover:bg-[#173867] transition-colors px-4 py-2 rounded-soft text-sm font-medium flex items-center gap-2 shadow-sm"
+            >
+              Book a Roadmap Call
+            </a>
+          </div>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container nav">
-      <a href="#hero" class="brand" aria-label="Cimulink home">
-        <span class="badge">
-          <img src="assets/logos/cimulink logo.svg" alt="Cimulink logo">
-        </span>
-        <span class="brand-name">Cimulink</span>
-      </a>
+          <!-- Mobile menu button -->
+          <details class="md:hidden relative">
+            <summary
+              class="list-none cursor-pointer text-on-surface-variant hover:text-on-surface"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </summary>
+            <div
+              class="absolute right-0 top-10 w-72 rounded-card border border-card-border bg-white shadow-lg p-4"
+            >
+              <div class="flex flex-col gap-3">
+                <a href="#home" class="text-sm font-medium text-on-surface"
+                  >Home</a
+                >
+                <a href="#solutions" class="text-sm font-medium text-on-surface"
+                  >Solutions</a
+                >
+                <a
+                  href="#how-it-works"
+                  class="text-sm font-medium text-on-surface"
+                  >How it Works</a
+                >
+                <a
+                  href="#manufacturing"
+                  class="text-sm font-medium text-on-surface"
+                  >Manufacturing</a
+                >
+                <a href="#faq" class="text-sm font-medium text-on-surface"
+                  >FAQ</a
+                >
+                <a
+                  href="https://calendly.com/ajay_k_gupta/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-2 bg-primary text-on-primary border border-primary px-4 py-3 rounded-soft text-sm font-medium text-center shadow-sm"
+                >
+                  Book a Roadmap Call
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ajay-kaaran-gupta/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="border border-outline-variant text-on-surface px-4 py-3 rounded-soft text-sm font-medium text-center bg-surface-container-lowest"
+                >
+                  Connect on LinkedIn
+                </a>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </nav>
 
-      <nav class="nav-links" aria-label="Primary">
-        <a class="nav-link" href="#hero">Home</a>
-        <a class="nav-link" href="#problems">Problems</a>
-        <a class="nav-link" href="#solutions">Services</a>
-        <a class="nav-link" href="#process">Process</a>
-        <a class="nav-link" href="#experience">Experience</a>
-        <a class="nav-link" href="#faqs">FAQs</a>
-        <a class="nav-link" href="#contact">Contact</a>
-      </nav>
+    <!-- Hero Section -->
+    <header
+      id="home"
+      class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-grid-pattern"
+    >
+      <div
+        class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fade-in"
+      >
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-tertiary/20 bg-tertiary/10 mb-8"
+        >
+          <span
+            class="font-mono text-[11px] text-tertiary uppercase tracking-[0.1em]"
+            >ERP · Automation · AI · Custom Software</span
+          >
+        </div>
 
-      <a href="https://calendly.com/ajay_k_gupta/30min" target="_blank" rel="noopener" class="btn btn-primary">Schedule Call</a>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero -->
-    <section id="hero" class="hero">
-      <div class="container">
-        <span class="pill" id="hero-pill" aria-live="polite">
-          <img src="data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 20l9-5-9-5-9 5 9 5z'/%3E%3Cpath d='M12 12l9-5-9-5-9 5 9 5z'/%3E%3C/svg%3E" alt="" />
-          <span class="typewriter-target"></span>built for #scale | ready for #growth</span>
-        </span>
-
-        <h1 class="h1">
-          Your Ambition Needs a System That Can <span class="accent-green">Keep Up.</span>
+        <h1
+          class="text-4xl md:text-5xl lg:text-[64px] font-bold text-on-surface tracking-tight leading-[1.1] mb-6 max-w-4xl mx-auto"
+        >
+          Build a Business That Runs on
+          <span class="text-primary">Connected Systems</span>
         </h1>
-        <p class="hero-sub">
-          From transforming strained systems to architecting new platforms from scratch, we ensure your technology is built for performance, not problems.
+
+        <p
+          class="text-lg md:text-xl text-on-surface-variant max-w-3xl mx-auto leading-relaxed mb-10"
+        >
+          We help businesses connect their processes, people, and information
+          using ERP, automation, AI, integrations, and custom software.
         </p>
 
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#contact">Schedule a Discovery Call</a>
-          <a class="btn" href="#experience">See Experience</a>
+        <div
+          class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-20"
+        >
+          <a
+            href="https://calendly.com/ajay_k_gupta/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto bg-primary text-on-primary font-semibold px-8 py-4 rounded-soft flex items-center justify-center gap-2 hover:bg-[#173867] transition-all shadow-sm"
+          >
+            Book a Roadmap Call
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.33331 8H12.6666"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8 3.33331L12.6667 7.99998L8 12.6666"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <a
+            href="#how-it-works"
+            class="w-full sm:w-auto border border-outline-variant text-on-surface px-8 py-4 rounded-soft hover:bg-[#e2e8f0] transition-all font-medium bg-white"
+          >
+            Explore Our Approach
+          </a>
         </div>
 
-        <div class="metrics">
-          <div class="metric">🚀 Scale‑ready MVPs</div>
-          <div class="metric">📉 Reduced churn & risk</div>
-          <div class="metric">🔐 Enterprise‑grade</div>
-        </div>
-
-        <!-- Logos -->
-        <div class="logos-wrap">
-          <div class="logos-card">
-            <div class="logos-marquee" role="list" aria-label="Companies we've worked with">
-              <div class="logos-track">
-                <div class="logo-chip" role="listitem"><img src="assets/logos/arcesium logo.svg" alt="Arcesium"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/sap logo.svg" alt="SAP"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/slice logo.png" alt="Slice" style="background:#6C2BD9;border-radius:8px;padding:4px"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/prudential logo.jpg" alt="Prudential" style="background:#fff;border-radius:8px;padding:4px"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/MAQ-Software-Logo.svg" alt="MAQ Software"></div>
-
-                <!-- duplicate for infinite loop -->
-                <div class="logo-chip" role="listitem"><img src="assets/logos/arcesium logo.svg" alt="Arcesium"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/sap logo.svg" alt="SAP"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/slice logo.png" alt="Slice" style="background:#6C2BD9;border-radius:8px;padding:4px"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/prudential logo.jpg" alt="Prudential" style="background:#fff;border-radius:8px;padding:4px"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/MAQ-Software-Logo.svg" alt="MAQ Software"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section id="problems">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Problems We Solve</div>
-          <h2>Stop Building on Shaky Ground.</h2>
-          <p class="sub">Many promising platforms fail not from a lack of vision, but from a weak technical foundation. We prevent the common pitfalls that stifle growth.</p>
-        </div>
-
-        <!-- feature 1 -->
-        <div class="featurette">
-          <div class="side-right" style="position:relative">
-            <h3>⚡ Poor Scalability</h3>
-            <p class="sub">Your MVP got you funded, but now it creaks under pressure. We re‑architect for high‑throughput and low‑latency, ensuring you're ready for primetime.</p>
-          </div>
-          <div class="media side-left">
-            <div class="chips">
-              <span class="chip">Load Spikes</span>
-              <span class="chip">Latency</span>
-              <span class="chip emph">Throughput</span>
-            </div>
-            <div class="flow" aria-hidden="true">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5,70 C25,40 75,60 95,30" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-        
-        <!-- feature 2 -->
-        <div class="featurette alt" style="margin-top:18px">
-          <div class="side-left" style="position:relative">
-            <h3>🧱 Crippling Technical Debt</h3>
-            <p class="sub">Rushed features lead to a codebase that's hard to maintain. We establish best practices and refactor for long‑term velocity.</p>
-          </div>
-          <div class="media side-right">
-            <div class="chips">
-              <span class="chip">Refactor</span>
-              <span class="chip">Testing</span>
-              <span class="chip emph">Standards</span>
-            </div>
-            <div class="flow" aria-hidden="true">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5,30 C35,50 65,20 95,40" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- feature 3 -->
-        <div class="featurette" style="margin-top:18px">
-          <div class="side-right" style="position:relative">
-            <h3>🎯 Vague Strategic Guidance</h3>
-            <p class="sub">Your team is executing, but are they building the right thing? We provide T‑shaped expertise, bridging business goals and technical implementation.</p>
-          </div>
-          <div class="media side-left">
-            <div class="chips">
-              <span class="chip">OKRs</span>
-              <span class="chip">Priorities</span>
-              <span class="chip emph">Outcomes</span>
-            </div>
-            <div class="flow" aria-hidden="true">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5,60 C30,30 70,70 95,40" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-        
-        <!-- feature 4 -->
-        <div class="featurette alt" style="margin-top:18px">
-          <div class="side-left" style="position:relative">
-            <h3>🔗 Integration Headaches</h3>
-            <p class="sub">Your platform can't talk to other essential tools, creating data silos and blocking valuable partnerships. We build secure, reliable APIs to connect your ecosystem.</p>
-          </div>
-          <div class="media side-right">
-            <div class="chips">
-              <span class="chip">Auth</span>
-              <span class="chip">Webhooks</span>
-              <span class="chip emph">APIs</span>
-            </div>
-            <div class="flow" aria-hidden="true">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5,50 C40,20 60,80 95,50" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- divider -->
-    <div class="section-divider" aria-hidden="true"></div>
-
-    <!-- Solution & Services -->
-    <section id="solutions">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">What We Do</div>
-          <h2>A Partnership, Not a Purchase.</h2>
-          <p class="sub">Our approach is built on a deep, collaborative understanding of your business. We offer focused expertise to deliver tangible results.</p>
-        </div>
-
-        <div class="featurette">
-          <div>
-            <h3>Scalable MVP Development</h3>
-            <p class="sub">We don't just build MVPs; we build "Minimum Scalable Products". Launch with a robust architecture designed for future growth from day one.</p>
-          </div>
-          <div class="media">
-            <div class="chips">
-              <span class="chip">MVP</span>
-              <span class="chip">Foundations</span>
-              <span class="chip emph">Scalable</span>
-            </div>
-            <div class="flow" aria-hidden="true">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5,65 C35,35 65,55 95,25" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="featurette alt" style="margin-top:18px">
-          <div>
-            <h3>Legacy System Modernization</h3>
-            <p class="sub">Unlock new potential from your existing software. We carefully migrate and modernize legacy systems to improve performance, security, and maintainability.</p>
-          </div>
-          <div class="media">
-            <div class="chips">
-              <span class="chip">Migrate</span>
-              <span class="chip">Hardening</span>
-              <span class="chip emph">Modernize</span>
-            </div>
-            <div class="flow" aria-hidden="true">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5,40 C30,60 70,20 95,45" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="featurette" style="margin-top:18px">
-          <div>
-            <h3>Architectural Guidance</h3>
-            <p class="sub">Leverage our expertise as a "Developer‑Educator". We provide strategic consulting, system design reviews, and team upskilling to ensure long‑term success.</p>
-          </div>
-          <div class="media">
-            <div class="chips">
-              <span class="chip">Reviews</span>
-              <span class="chip">Diagrams</span>
-              <span class="chip emph">Decisions</span>
-            </div>
-            <div class="flow" aria-hidden="true">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5,55 C25,25 75,75 95,45" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="featurette alt" style="margin-top:18px">
-          <div>
-            <h3>Custom API & Integration</h3>
-            <p class="sub">When you need to connect disparate systems and unlock new revenue streams, we design secure, reliable APIs to power your ecosystem.</p>
-          </div>
-          <div class="media">
-            <div class="chips">
-              <span class="chip">SDKs</span>
-              <span class="chip">Events</span>
-              <span class="chip emph">Contracts</span>
-            </div>
-            <div class="flow" aria-hidden="true">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5,50 C45,25 55,75 95,50" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- divider -->
-    <div class="section-divider" aria-hidden="true"></div>
-
-    <!-- Process -->
-    <section id="process">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Our Process</div>
-          <h2>Your Blueprint for a Better Backend.</h2>
-          <p class="sub">We follow a clear, collaborative process to ensure your project is a success from start to finish.</p>
-        </div>
-
-        <div class="process-wrap">
-
-          <div class="process-intro">
-            <div class="sub" style="text-align:left">
-              Our 4‑step process is built for momentum. We keep it lean and validation‑ready so you can launch without delays.
-            </div>
-          </div>
-
-          <!-- Step 1 -->
-          <div class="step">
-            <div class="step-media">
-              <div class="chip-wrap">
-                <span class="chip">Idea</span>
-                <span class="chip">Discovery Call</span>
-                <span class="chip">Planning</span>
-                <span class="chip primary">Roadmap</span>
-              </div>
-              <div class="flow">
-                <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M5,20 C35,10 65,30 95,20 M5,55 C35,45 65,65 95,55 M5,85 C35,75 65,95 95,85" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-                </svg>
-              </div>
-            </div>
-            <div>
-              <div class="step-num">01</div>
-              <h3>Discovery & Alignment</h3>
-              <p>We start with a deep‑dive call to understand your business goals, technical challenges, and vision. This isn't a sales pitch; it's a strategic alignment session.</p>
-            </div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="step alt">
-            <div>
-              <div class="step-num">02</div>
-              <h3>Strategic Roadmapping & Architecture</h3>
-              <p>We design a detailed architectural blueprint and roadmap. You'll receive a plan that connects every technical decision to a business outcome.</p>
-            </div>
-            <div class="step-media">
-              <div class="chip-wrap">
-                <span class="chip">System Design</span>
-                <span class="chip">Data Modeling</span>
-                <span class="chip">Risk Mitigation</span>
-                <span class="chip primary">Milestones</span>
-              </div>
-              <div class="flow">
-                <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M5,30 C40,20 60,40 95,30 M5,60 C40,50 60,70 95,60" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="step">
-            <div class="step-media">
-              <div class="chip-wrap">
-                <span class="chip">CI/CD</span>
-                <span class="chip">Quality Gates</span>
-                <span class="chip">Observability</span>
-                <span class="chip primary">Agile Delivery</span>
-              </div>
-              <div class="flow">
-                <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M5,25 C30,15 70,35 95,25 M5,70 C30,60 70,80 95,70" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-                </svg>
-              </div>
-            </div>
-            <div>
-              <div class="step-num">03</div>
-              <h3>Agile Execution & Collaboration</h3>
-              <p>With a plan in place, we begin development with full transparency: regular check‑ins, direct communication, and a collaborative workflow. No black boxes.</p>
-            </div>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="step alt">
-            <div>
-              <div class="step-num">04</div>
-              <h3>Delivery & Partnership</h3>
-              <p>We deliver a robust, well‑documented solution and ensure a smooth handover to your team. The goal: a long‑term strategic partnership, not a one‑off engagement.</p>
-            </div>
-            <div class="step-media">
-              <div class="chip-wrap">
-                <span class="chip">Docs & Handoff</span>
-                <span class="chip">Launch Plan</span>
-                <span class="chip">Scaling</span>
-                <span class="chip primary">Support</span>
-              </div>
-              <div class="flow">
-                <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M5,35 C35,25 65,45 95,35 M5,75 C35,65 65,85 95,75" stroke="rgba(148,163,184,.35)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- divider -->
-    <div class="section-divider" aria-hidden="true"></div>
-
-    <!-- Experience -->
-    <section id="experience">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Meet the Architect</div>
-          <h2>Experience proven at top‑tier companies</h2>
-          <p class="sub">Your project is led by a top‑tier engineering graduate with a decade of experience architecting and scaling complex systems at leading fintech and enterprise software companies.</p>
-        </div>
-
-        <!-- Architect: Top block (single card with photo + description) -->
-        <div class="arch-card" style="padding:0;overflow:hidden">
-          <div class="architect-two-col" style="align-items:stretch; border:0; background:transparent; box-shadow:none; padding:0">
-            <!-- Left: photo -->
-            <div class="left" style="display:flex; border:0; background:transparent; box-shadow:none">
-              <div style="width:100%;max-width:360px;height:240px;border-radius:14px;overflow:hidden;border:2px solid rgba(148,163,184,.25);box-shadow:0 10px 26px rgba(2,6,23,.35), inset 0 1px 0 rgba(255,255,255,.06); margin:20px 0 20px 20px">
-                <img src="assets/photos/architect.jpeg" alt="Architect photo" style="width:100%;height:100%;object-fit:cover" />
-              </div>
-            </div>
-            <!-- Right: description -->
-            <div class="right" style="display:flex; border:0; background:transparent; box-shadow:none; padding:20px 20px 20px 0">
-              <div style="flex:1;display:flex;flex-direction:column;justify-content:center;min-height:240px">
-                <div class="kicker" style="color:var(--primary);letter-spacing:.18em;font-size:13px">EDUCATION</div>
-                <div class="sub" style="text-align:left;margin:6px 0 16px">Indian Institute of Technology Guwahati (IIT-G)</div>
-
-                <div class="kicker" style="color:var(--primary);letter-spacing:.18em;font-size:13px">INDUSTRY VERTICALS</div>
-                <div class="sub" style="text-align:left;margin:6px 0 16px">Fintech, Insurance, B2B SaaS</div>
-
-                <div class="kicker" style="color:var(--primary);letter-spacing:.18em;font-size:13px">TECHNICAL EXPERTISE</div>
-                <div class="sub" style="text-align:left;margin:6px 0 0">
-                  Building Scalable Systems, Microservices, Event-Driven & Asynchronous Architecture, Cloud-Native Solutions (AWS, Kubernetes), Automated CI/CD (GitHub Actions, Argo), and End-to-End Observability.
+        <!-- Stats -->
+        <!-- <div class="flex justify-center gap-16 md:gap-24 border-t border-card-border pt-10 max-w-2xl mx-auto">
+                <div>
+                    <div class="font-mono text-[11px] text-on-surface-variant uppercase tracking-wider mb-2">Avg. Time to Hire</div>
+                    <div class="text-2xl font-bold text-white">24 Hours</div>
                 </div>
-                <!-- LinkedIn inside Architect description -->
-                <div style="margin-top:14px">
-                  <a href="https://www.linkedin.com/in/ajay-kaaran-gupta" target="_blank" rel="noopener" class="btn" aria-label="Connect on LinkedIn" title="Connect on LinkedIn" style="padding:8px 12px;font-weight:700;display:inline-flex;align-items:center;gap:8px;border-radius:10px">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#0a66c2" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M20.452 20.452h-3.554v-5.568c0-1.329-.026-3.039-1.852-3.039-1.854 0-2.137 1.448-2.137 2.944v5.663H9.354V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.604 0 4.267 2.372 4.267 5.456v6.287zM5.337 7.433c-1.141 0-2.064-.925-2.064-2.065 0-1.14.923-2.064 2.064-2.064 1.14 0 2.064.924 2.064 2.064 0 1.14-.924 2.065-2.064 2.065zM7.114 20.452H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.277V1.723C24 .771 23.2 0 22.225 0z"/>
+                <div>
+                    <div class="font-mono text-[11px] text-on-surface-variant uppercase tracking-wider mb-2">Tech Team Retained</div>
+                    <div class="text-2xl font-bold text-tertiary">9 Days</div>
+                </div>
+            </div> -->
+      </div>
+
+      <!-- Gradient fade for background grid -->
+      <div
+        class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-surface to-transparent"
+      ></div>
+    </header>
+
+    <!-- Marquee / Tech Stack Section -->
+    <section class="pt-6 pb-12 border-y border-card-border/70 bg-[#edf3f8]">
+      <div class="max-w-[1280px] mx-auto px-4">
+        <div
+          class="font-mono text-[10px] text-on-surface-variant uppercase tracking-[0.15em] text-center mb-8"
+        >
+          Technology built around how your business actually works
+        </div>
+        <div
+          class="flex flex-wrap justify-center gap-3 md:gap-4 max-w-5xl mx-auto"
+        >
+          <span
+            class="border border-card-border px-4 py-2 rounded-badge font-mono text-[13px] text-on-surface-variant bg-surface-container-lowest"
+            >ERPNEXT</span
+          >
+          <span
+            class="border border-card-border px-4 py-2 rounded-badge font-mono text-[13px] text-on-surface-variant bg-surface-container-lowest"
+            >FRAPPE</span
+          >
+          <span
+            class="border border-card-border px-4 py-2 rounded-badge font-mono text-[13px] text-on-surface-variant bg-surface-container-lowest"
+            >MANUFACTURING</span
+          >
+          <span
+            class="border border-card-border px-4 py-2 rounded-badge font-mono text-[13px] text-on-surface-variant bg-surface-container-lowest"
+            >AUTOMATION</span
+          >
+          <span
+            class="border border-card-border px-4 py-2 rounded-badge font-mono text-[13px] text-on-surface-variant bg-surface-container-lowest"
+            >INTEGRATIONS</span
+          >
+          <span
+            class="border border-card-border px-4 py-2 rounded-badge font-mono text-[13px] text-on-surface-variant bg-surface-container-lowest"
+            >AI AGENTS</span
+          >
+          <span
+            class="border border-card-border px-4 py-2 rounded-badge font-mono text-[13px] text-on-surface-variant bg-surface-container-lowest"
+            >CUSTOM APPS</span
+          >
+          <span
+            class="border border-card-border px-4 py-2 rounded-badge font-mono text-[13px] text-on-surface-variant bg-surface-container-lowest"
+            >PORTALS</span
+          >
+          <span
+            class="border border-card-border px-4 py-2 rounded-badge font-mono text-[13px] text-on-surface-variant bg-surface-container-lowest"
+            >INFRASTRUCTURE</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder Credibility Section -->
+    <section id="solutions" class="py-24 lg:py-28 bg-surface">
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-16 items-start"
+        >
+          <div>
+            <div
+              class="font-mono text-[11px] text-tertiary uppercase tracking-[0.15em] mb-4"
+            >
+              Why Cimulink
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-on-surface mb-6">
+              Your Business Shouldn't Run on Disconnected Software
+            </h2>
+            <p class="text-lg text-on-surface-variant leading-relaxed mb-6">
+              As companies grow, information gets scattered across spreadsheets,
+              WhatsApp, accounting software, ERP, CRM, and departmental tools.
+            </p>
+            <p class="text-on-surface-variant leading-relaxed">
+              Cimulink brings those pieces together so teams work from shared
+              information, routine work is automated, and management sees what
+              needs attention.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div
+              class="bg-card-bg border border-card-border rounded-card p-6 shadow-sm"
+            >
+              <div
+                class="font-mono text-[10px] text-tertiary uppercase tracking-widest mb-3"
+              >
+                ERP &amp; Operations
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-2">
+                One Operational Backbone
+              </h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Connect sales, purchasing, inventory, production, projects,
+                service, and finance.
+              </p>
+            </div>
+            <div
+              class="bg-card-bg border border-card-border rounded-card p-6 shadow-sm"
+            >
+              <div
+                class="font-mono text-[10px] text-tertiary uppercase tracking-widest mb-3"
+              >
+                Automation
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-2">
+                Less Manual Coordination
+              </h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Automate approvals, alerts, documents, follow-ups, and data
+                movement between systems.
+              </p>
+            </div>
+            <div
+              class="bg-card-bg border border-card-border rounded-card p-6 shadow-sm"
+            >
+              <div
+                class="font-mono text-[10px] text-tertiary uppercase tracking-widest mb-3"
+              >
+                AI &amp; Integrations
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-2">
+                Tools That Work Together
+              </h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Connect AI agents and existing applications to real business
+                processes and actions.
+              </p>
+            </div>
+            <div
+              class="bg-card-bg border border-card-border rounded-card p-6 shadow-sm"
+            >
+              <div
+                class="font-mono text-[10px] text-tertiary uppercase tracking-widest mb-3"
+              >
+                Custom Systems
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-2">
+                The Missing Pieces
+              </h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Build portals and applications around processes that standard
+                software cannot cover well.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pipeline Section -->
+    <section id="how-it-works" class="py-24 lg:py-32">
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
+        >
+          <div class="max-w-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-on-surface mb-4">
+              We Don't Start With <span class="text-tertiary">Software</span>
+            </h2>
+            <p class="text-on-surface-variant text-lg">
+              We begin with how work actually moves through your business, then
+              decide what should be designed, connected, and automated.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="bg-card-bg border border-card-border rounded-card p-8 hover:border-primary/50 transition-colors shadow-sm"
+          >
+            <div
+              class="font-mono text-[11px] text-tertiary uppercase tracking-widest mb-4"
+            >
+              01 / Understand
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-4">
+              Map the Real Process
+            </h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Understand the people, information, decisions, exceptions, and
+              tools involved in the work today.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="bg-card-bg border border-card-border rounded-card p-8 hover:border-primary/50 transition-colors shadow-sm"
+          >
+            <div
+              class="font-mono text-[11px] text-tertiary uppercase tracking-widest mb-4"
+            >
+              02 / Design &amp; Connect
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-4">
+              Create One System
+            </h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Define ownership, transactions, integrations, approvals, and
+              visibility before configuring or building.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="bg-card-bg border border-card-border rounded-card p-8 hover:border-primary/50 transition-colors shadow-sm"
+          >
+            <div
+              class="font-mono text-[11px] text-tertiary uppercase tracking-widest mb-4"
+            >
+              03 / Automate
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-4">
+              Remove Repetitive Work
+            </h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Automate routine actions and surface exceptions once the
+              underlying process is clear and reliable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deliverables Section -->
+    <section
+      id="manufacturing"
+      class="py-24 lg:py-32 border-y border-card-border/70 bg-[#edf3f8]"
+    >
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-14">
+          <div
+            class="font-mono text-[11px] text-tertiary uppercase tracking-[0.15em] mb-4"
+          >
+            Featured Offer · Manufacturing
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-on-surface mb-4">
+            Connect Your Entire Manufacturing Operation
+          </h2>
+          <p class="text-lg text-on-surface-variant leading-relaxed">
+            Bring sales, material planning, purchasing, inventory, production,
+            quality, dispatch, and accounts into one operating flow using
+            ERPNext.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-card-bg border border-card-border rounded-card p-7 shadow-sm"
+          >
+            <div
+              class="font-mono text-[11px] text-tertiary uppercase tracking-widest mb-4"
+            >
+              01 / Demand
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-3">
+              Sales and Material Planning
+            </h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed mb-5">
+              Connect confirmed orders to material requirements, purchasing
+              plans, and realistic production demand.
+            </p>
+            <ul class="space-y-3 text-sm text-on-surface-variant">
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span
+                  >Translate confirmed orders into material and capacity
+                  requirements.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span
+                  >Plan production using current demand and available
+                  stock.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span
+                  >See what must be produced, purchased, or transferred.</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-card-bg border border-card-border rounded-card p-7 shadow-sm"
+          >
+            <div
+              class="font-mono text-[11px] text-tertiary uppercase tracking-widest mb-4"
+            >
+              02 / Supply
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-3">
+              Purchasing and Inventory
+            </h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed mb-5">
+              Keep materials, purchase orders, receipts, and stock movements
+              connected to actual operational demand.
+            </p>
+            <ul class="space-y-3 text-sm text-on-surface-variant">
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span
+                  >Create purchase requirements from real material demand.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span
+                  >Track shortages, receipts, reservations, and material
+                  movement.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span>Give purchasing and stores the same information.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-card-bg border border-card-border rounded-card p-7 shadow-sm"
+          >
+            <div
+              class="font-mono text-[11px] text-tertiary uppercase tracking-widest mb-4"
+            >
+              03 / Execution
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-3">
+              Production and Quality
+            </h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed mb-5">
+              Track work orders, production progress, consumption, output, and
+              quality in the same transaction flow.
+            </p>
+            <ul class="space-y-3 text-sm text-on-surface-variant">
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span>Work orders, job cards, and production status.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span>Material consumption and finished-goods output.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span>Quality checks and production exceptions.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-card-bg border border-card-border rounded-card p-7 shadow-sm"
+          >
+            <div
+              class="font-mono text-[11px] text-tertiary uppercase tracking-widest mb-4"
+            >
+              04 / Completion
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-3">
+              Dispatch and Accounts
+            </h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed mb-5">
+              Connect finished goods, delivery readiness, dispatch documents,
+              invoices, and accounts.
+            </p>
+            <ul class="space-y-3 text-sm text-on-surface-variant">
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span
+                  >Delivery status tied to actual production readiness.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span>Traceable stock and dispatch transactions.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span>Operational and financial information aligned.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-card-bg border border-card-border rounded-card p-7 shadow-sm"
+          >
+            <div
+              class="font-mono text-[11px] text-tertiary uppercase tracking-widest mb-4"
+            >
+              05 / Visibility
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-3">
+              Management Control
+            </h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed mb-5">
+              Surface delayed orders, shortages, overdue purchasing, and
+              production risks before they become emergencies.
+            </p>
+            <ul class="space-y-3 text-sm text-on-surface-variant">
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span
+                  >Delayed orders, shortages, and overdue purchasing in one
+                  view.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span
+                  >Approval workflows that reduce dependence on the owner.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tertiary font-bold">-</span
+                ><span
+                  >Shared dashboards, alerts, approvals, and exception
+                  views.</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-primary text-on-primary border border-primary rounded-card p-7 shadow-sm"
+          >
+            <div
+              class="font-mono text-[11px] uppercase tracking-widest mb-4 opacity-80"
+            >
+              Operating Principle
+            </div>
+            <h3 class="text-xl font-bold mb-3">
+              Manufacturing Is Our First Focused Vertical
+            </h3>
+            <p class="text-sm leading-relaxed opacity-90">
+              Manufacturing is the first specialized acquisition offer. The
+              Cimulink brand remains broader: connected systems for businesses
+              across industries.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI and Comparison Section -->
+    <section class="py-24 lg:py-32 bg-surface">
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-start"
+        >
+          <div>
+            <div
+              class="font-mono text-[11px] text-tertiary uppercase tracking-[0.15em] mb-4"
+            >
+              Business impact
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-on-surface mb-6">
+              The Real Cost Is Operational Friction
+            </h2>
+            <p class="text-lg text-on-surface-variant leading-relaxed mb-6">
+              Every manual handoff creates another opportunity for delay,
+              rework, and conflicting information. As the business grows,
+              coordination becomes a full-time job.
+            </p>
+            <p class="text-on-surface-variant leading-relaxed">
+              Connected systems reduce that friction by making transactions,
+              responsibilities, exceptions, and operational status visible.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div
+              class="border border-card-border bg-card-bg rounded-card p-6 shadow-sm"
+            >
+              <div
+                class="font-mono text-[10px] text-tertiary uppercase tracking-widest mb-3"
+              >
+                Less Waste
+              </div>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Reduce duplicate entry and repetitive coordination between
+                teams.
+              </p>
+            </div>
+            <div
+              class="border border-card-border bg-card-bg rounded-card p-6 shadow-sm"
+            >
+              <div
+                class="font-mono text-[10px] text-tertiary uppercase tracking-widest mb-3"
+              >
+                Better Calibration
+              </div>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Clarify processes, responsibilities, approvals, and exception
+                handling.
+              </p>
+            </div>
+            <div
+              class="border border-card-border bg-card-bg rounded-card p-6 shadow-sm"
+            >
+              <div
+                class="font-mono text-[10px] text-tertiary uppercase tracking-widest mb-3"
+              >
+                Clearer Feedback
+              </div>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Give teams and management one dependable version of operational
+                truth.
+              </p>
+            </div>
+            <div
+              class="border border-card-border bg-card-bg rounded-card p-6 shadow-sm"
+            >
+              <div
+                class="font-mono text-[10px] text-tertiary uppercase tracking-widest mb-3"
+              >
+                Faster Decisions
+              </div>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Surface delays and shortages early enough for teams to act.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-16 overflow-hidden border border-card-border rounded-card bg-card-bg shadow-sm"
+        >
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-card-border"
+          >
+            <div class="p-7">
+              <div
+                class="font-mono text-[11px] text-on-surface-variant uppercase tracking-widest mb-4"
+              >
+                Disconnected tools
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-3">
+                Every Team Coordinates Manually
+              </h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Spreadsheets, messages, accounting tools, and departmental
+                software hold different pieces of the operation.
+              </p>
+            </div>
+            <div class="p-7">
+              <div
+                class="font-mono text-[11px] text-on-surface-variant uppercase tracking-widest mb-4"
+              >
+                Software installation
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-3">
+                The Tool Changes, the Gaps Remain
+              </h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Installing ERP without resolving process, ownership, and data
+                flow simply moves the old problems into new screens.
+              </p>
+            </div>
+            <div class="p-7 bg-[#f8fbfd]">
+              <div
+                class="font-mono text-[11px] text-tertiary uppercase tracking-widest mb-4"
+              >
+                Cimulink
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-3">
+                Process-Led System Design
+              </h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Cimulink maps the operation first, then configures, connects,
+                automates, or builds what the process actually needs.
+              </p>
+            </div>
+          </div>
+          <div class="border-t border-card-border px-7 py-5 bg-[#f8fbfd]">
+            <p
+              class="font-mono text-[11px] text-on-surface-variant uppercase tracking-[0.12em]"
+            >
+              Goal: connected processes, connected data, and useful management
+              visibility.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <!-- <section class="py-24 bg-[#0a0e16]/30 border-y border-card-border/30">
+        <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+                <div class="w-full md:w-2/5 flex-shrink-0">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Nikunj - CTO" class="w-full h-auto aspect-[4/5] object-cover rounded-card grayscale contrast-125 brightness-90">
+                </div>
+                <div class="w-full md:w-3/5">
+                    <svg class="text-tertiary w-10 h-10 mb-6 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                     </svg>
-                    <span>Connect on LinkedIn</span>
-                  </a>
+                    <blockquote class="text-xl md:text-2xl font-medium italic text-white leading-relaxed mb-8">
+                        "Most recruiters don't know the difference between a library and a framework. Cimulink's team actually understands how JVM profilers work and why our Kafka architecture needs a specific type of engineer. They've saved us hundreds of hours in technical screening."
+                    </blockquote>
+                    <div>
+                        <div class="font-bold text-white text-lg">Nikunj</div>
+                        <div class="font-mono text-[11px] text-on-surface-variant uppercase tracking-widest mt-1">Chief Technology Officer</div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+    </section> -->
+
+    <!-- Bottom CTA -->
+    <section class="py-32 relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl md:text-5xl font-bold text-on-surface mb-6">
+          Ready to Connect the Way Your Business Operates?
+        </h2>
+        <p class="text-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+          Start with the process causing the most delay, rework, or uncertainty.
+          We will help you map a practical systems roadmap.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row justify-center items-center gap-4"
+        >
+          <a
+            href="https://calendly.com/ajay_k_gupta/30min"
+            class="w-full sm:w-auto bg-primary text-on-primary font-semibold px-8 py-4 rounded-soft flex items-center justify-center gap-2 hover:bg-[#173867] transition-all shadow-sm"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 4H5C3.89543 4 3 4.89543 3 6V18C3 19.1046 3.89543 20 5 20H19C20.1046 20 21 19.1046 21 18V6C21 4.89543 20.1046 4 19 4Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16 2V6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8 2V6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3 10H21"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Book a Roadmap Call
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ajay-kaaran-gupta/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto border border-outline-variant text-on-surface px-8 py-4 rounded-soft hover:bg-[#e2e8f0] transition-all font-medium bg-white"
+          >
+            Connect on LinkedIn
+          </a>
         </div>
 
-        <!-- Architect: Bottom block (full-width 3 cards) -->
-        <div class="arch-grid" style="grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px">
-          <div class="arch-card reveal">
-            <span class="bubble" style="width:120px;height:120px;left:-30px;top:-20px"></span>
-            <span class="bubble" style="width:70px;height:70px;right:-20px;bottom:-10px"></span>
-            <h3 class="arch-title"><span class="icon">⌁</span> Robust System Design</h3>
-            <ul class="arch-list">
-              <li><span class="tick">✓</span><span>Architected core financial engines for fintech platforms.</span></li>
-              <li><span class="tick">✓</span><span>Built secure systems to manage sensitive data for Fortune 500 companies.</span></li>
-              <li><span class="tick">✓</span><span>Developed automated payment systems to streamline revenue collection.</span></li>
-            </ul>
-          </div>
-
-          <div class="arch-card reveal">
-            <span class="bubble" style="width:100px;height:100px;right:-30px;top:-20px"></span>
-            <span class="bubble" style="width:60px;height:60px;left:-20px;bottom:-20px"></span>
-            <h3 class="arch-title"><span class="icon">⚡</span> Elite Performance & Scale</h3>
-            <ul class="arch-list">
-              <li><span class="tick">✓</span><span>Optimized systems to handle massive user growth while cutting server costs.</span></li>
-              <li><span class="tick">✓</span><span>Engineered intelligent infrastructure that adapts to real‑time demand.</span></li>
-              <li><span class="tick">✓</span><span>Improved responsiveness and reliability for seamless user experience.</span></li>
-            </ul>
-          </div>
-
-          <div class="arch-card reveal">
-            <span class="bubble" style="width:110px;height:110px;left:-35px;bottom:-25px"></span>
-            <span class="bubble" style="width:55px;height:55px;right:-15px;top:-15px"></span>
-            <h3 class="arch-title"><span class="icon">◎</span> Strategic Leadership</h3>
-            <ul class="arch-list">
-              <li><span class="tick">✓</span><span>Led high‑performing teams to deliver complex projects on time and budget.</span></li>
-              <li><span class="tick">✓</span><span>Managed projects from concept to launch with strong quality gates.</span></li>
-              <li><span class="tick">✓</span><span>Raised platform stability with rigorous engineering and observability.</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Reuse the logo marquee -->
-        <div class="logos-wrap">
-          <div class="logos-card">
-            <div class="logos-marquee" role="list" aria-label="Experience proven at top-tier companies">
-              <div class="logos-track">
-                <div class="logo-chip" role="listitem"><img src="assets/logos/arcesium logo.svg" alt="Arcesium"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/sap logo.svg" alt="SAP"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/slice logo.png" alt="Slice" style="background:#6C2BD9;border-radius:8px;padding:4px"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/prudential logo.jpg" alt="Prudential" style="background:#fff;border-radius:8px;padding:4px"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/MAQ-Software-Logo.svg" alt="MAQ Software"></div>
-
-                <div class="logo-chip" role="listitem"><img src="assets/logos/arcesium logo.svg" alt="Arcesium"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/sap logo.svg" alt="SAP"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/slice logo.png" alt="Slice" style="background:#6C2BD9;border-radius:8px;padding:4px"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/prudential logo.jpg" alt="Prudential" style="background:#fff;border-radius:8px;padding:4px"></div>
-                <div class="logo-chip" role="listitem"><img src="assets/logos/MAQ-Software-Logo.svg" alt="MAQ Software"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <!-- <div class="mt-8">
+                <a href="#" class="inline-flex items-center gap-2 font-mono text-[11px] text-tertiary uppercase tracking-[0.15em] hover:text-white transition-colors">
+                    Requires Zero Ramp Time
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.33331 8H12.6666" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 3.33331L12.6667 7.99998L8 12.6666" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div> -->
       </div>
     </section>
 
-    <!-- FAQs -->
-    <section id="faqs">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">FAQs</div>
-          <h2>Have Questions? We Have Answers.</h2>
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 border-t border-card-border/70 bg-[#f1f5f9]">
+      <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-on-surface mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-on-surface-variant font-mono text-sm tracking-wide">
+            A few useful answers before we discuss your business system.
+          </p>
         </div>
 
-        <div class="faq">
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              Why work with us instead of a larger development agency?
-              <span>+</span>
-            </button>
-            <div class="faq-a">
-              <p class="sub">With a large agency, your project is often delegated to junior developers. With cimulink, you get direct, dedicated access to an architect with a decade of experience from start to finish. This means deeper expertise, clearer communication, and a strategic partner who understands the business context, not just the code. You're investing in experience, not overhead.</p>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- FAQ Item -->
+          <div
+            class="border border-card-border bg-card-bg rounded-card p-8 shadow-sm"
+          >
+            <h4 class="text-lg font-semibold text-on-surface mb-3">
+              Is Cimulink only an ERPNext company?
+            </h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              No. ERPNext and Frappe are important implementation platforms, but
+              Cimulink also works across process design, automation,
+              integrations, AI, custom applications, and infrastructure.
+            </p>
           </div>
-
-          <div class="faq-item" style="margin-top:12px">
-            <button class="faq-q" aria-expanded="false">
-              What if we just need strategic advice and not a full project?
-              <span>+</span>
-            </button>
-            <div class="faq-a">
-              <p class="sub">Absolutely. We offer "Architectural Guidance" and advisory retainers — perfect for teams needing senior‑level oversight, code reviews, or roadmap help without a full‑time hire or large‑scale engagement.</p>
-            </div>
+          <!-- FAQ Item -->
+          <div
+            class="border border-card-border bg-card-bg rounded-card p-8 shadow-sm"
+          >
+            <h4 class="text-lg font-semibold text-on-surface mb-3">
+              Do you start by recommending software?
+            </h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              No. We first understand the process, current tools, information
+              flow, responsibilities, and operational gaps. The right answer may
+              be configuration, integration, automation, or custom software.
+            </p>
           </div>
-
-          <div class="faq-item" style="margin-top:12px">
-            <button class="faq-q" aria-expanded="false">
-              Our technical debt is slowing us down, but we can't stop building new features. How do you handle this?
-              <span>+</span>
-            </button>
-            <div class="faq-a">
-              <p class="sub">We don't believe in "all or nothing" rewrites. We use a strategic, phased refactoring process that runs in parallel with feature development — improving stability and velocity without halting your roadmap.</p>
-            </div>
+          <!-- FAQ Item -->
+          <div
+            class="border border-card-border bg-card-bg rounded-card p-8 shadow-sm"
+          >
+            <h4 class="text-lg font-semibold text-on-surface mb-3">
+              Which industry are you focusing on first?
+            </h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Manufacturing is the first specialized offer, with a dedicated
+              focus on sales, materials, purchasing, production, quality,
+              dispatch, accounts, and management visibility.
+            </p>
           </div>
-
-          <div class="faq-item" style="margin-top:12px">
-            <button class="faq-q" aria-expanded="false">
-              How do you price your services?
-              <span>+</span>
-            </button>
-            <div class="faq-a">
-              <p class="sub">We focus on value, not just hours. We primarily work on a fixed‑project or monthly retainer basis for budget predictability and alignment on business outcomes like reduced churn and mitigated risk.</p>
-            </div>
-          </div>
-
-          <div class="faq-item" style="margin-top:12px">
-            <button class="faq-q" aria-expanded="false">
-              What technologies do you specialize in?
-              <span>+</span>
-            </button>
-            <div class="faq-a">
-              <p class="sub">Experts in Node.js, Go, Java, and Kotlin; cloud on AWS and Google Cloud. We're technology‑agnostic — we choose tools to solve your specific scalability and performance challenges.</p>
-            </div>
-          </div>
-
-          <div class="faq-item" style="margin-top:12px">
-            <button class="faq-q" aria-expanded="false">
-              What can we expect at the end of a project? What does the handoff look like?
-              <span>+</span>
-            </button>
-            <div class="faq-a">
-              <p class="sub">You receive clean, documented, and tested software. We conclude with a detailed handoff session and architectural diagrams so your team can confidently own and extend the foundation.</p>
-            </div>
+          <!-- FAQ Item (Spanning full or just part of grid based on design, keeping in grid for alignment) -->
+          <div
+            class="border border-card-border bg-card-bg rounded-card p-8 shadow-sm"
+          >
+            <h4 class="text-lg font-semibold text-on-surface mb-3">
+              Can you connect software we already use?
+            </h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Yes. Cimulink can connect existing ERP, CRM, websites, forms,
+              email, WhatsApp, accounting tools, APIs, and internal applications
+              where the integration is technically appropriate.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Final CTA -->
-    <section id="contact">
-      <div class="container">
-        <div class="cta">
-          <div class="eyebrow">Ready?</div>
-          <h2 class="h2">Ready to Build Your Future‑Proof Platform?</h2>
-          <p class="sub" style="margin:8px auto 16px">Let's start a conversation. We offer a no‑obligation discovery call to understand your challenges and explore how we can help you achieve your goals.</p>
-          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px">
-            <a class="btn btn-primary" href="https://calendly.com/ajay_k_gupta/30min" target="_blank" rel="noopener">Schedule Your Call</a>
-            <a class="btn" href="mailto:build@cimulink.com">build@cimulink.com</a>
+    <!-- Footer -->
+    <footer class="border-t border-card-border bg-[#eef3f8] pt-16 pb-8">
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-2 mb-6">
+              <img
+                src="cimulink clean only logo - without background.svg"
+                alt="Cimulink logo"
+                class="h-7 w-auto"
+              >
+              <span class="font-bold text-lg text-on-surface">Cimulink</span>
+            </div>
+            <p class="text-on-surface-variant text-sm max-w-sm leading-relaxed">
+              Connected business systems using ERP, automation, AI,
+              integrations, and custom software.
+            </p>
+          </div>
+
+          <div>
+            <h4
+              class="font-mono text-[11px] text-tertiary uppercase tracking-widest mb-6"
+            >
+              Overview
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#home"
+                  class="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#solutions"
+                  class="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                  >Solutions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#how-it-works"
+                  class="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                  >How it Works</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#manufacturing"
+                  class="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                  >Manufacturing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  class="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="font-mono text-[11px] text-tertiary uppercase tracking-widest mb-6"
+            >
+              Connect
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/ajay-kaaran-gupta/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                  >LinkedIn</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://calendly.com/ajay_k_gupta/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                  >Book a Roadmap Call</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
+
+        <div
+          class="border-t border-card-border/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <p class="font-mono text-xs text-on-surface-variant">
+            © 2026 Cimulink Inc. Connected business systems.
+          </p>
+        </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div>© 2025 Cimulink. All rights reserved.</div>
-      <div style="display:flex;gap:12px">
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating LinkedIn Button -->
-  <a href="https://www.linkedin.com/in/ajay-kaaran-gupta" target="_blank" rel="noopener" class="fab-linkedin" aria-label="Visit LinkedIn profile" title="LinkedIn">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M20.452 20.452h-3.554v-5.568c0-1.329-.026-3.039-1.852-3.039-1.854 0-2.137 1.448-2.137 2.944v5.663H9.354V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.604 0 4.267 2.372 4.267 5.456v6.287zM5.337 7.433c-1.141 0-2.064-.925-2.064-2.065 0-1.14.923-2.064 2.064-2.064 1.14 0 2.064.924 2.064 2.064 0 1.14-.924 2.065-2.064 2.065zM7.114 20.452H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.277V1.723C24 .771 23.2 0 22.225 0z"/>
-    </svg>
-  </a>
-
-  <script src="assets/js/main.js"></script>
-</body>
+    </footer>
+  </body>
 </html>
